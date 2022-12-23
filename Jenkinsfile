@@ -11,6 +11,7 @@ pipeline {
                 chmod +x ./kubectl
                 kubectl cluster-info
                 kubectl get no
+                kubectl apply -f 
                 '''
             }
         }
