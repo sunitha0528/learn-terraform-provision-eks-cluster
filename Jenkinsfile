@@ -5,6 +5,7 @@ pipeline {
             steps {
                 sh '''
                 terraform init
+                terraform destroy --auto-approve
                 '''
             }
         }
