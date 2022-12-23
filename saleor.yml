@@ -1,0 +1,42 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: saleor-server
+spec:
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: saleor
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      name: saleor
+      labels:
+        app: saleor
+    spec:
+      containers:
+        - name: saleor
+          image: praveenrajnikanth/workshop:saleor
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: saleor-loadbalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: saleor
+  ports:
+    - name: saleor
+      port: 8000
+      targetPort: 8000
