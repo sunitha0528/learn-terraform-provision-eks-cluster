@@ -12,6 +12,8 @@ pipeline {
                 kubectl cluster-info
                 kubectl get no
                 kubectl apply -f saleor.yml
+                kubectl apply -f db-service.yml
+                kubectl apply -f cache.yml
                 '''
             }
         }
