@@ -4,7 +4,7 @@ pipeline {
         stage('terraform') {
             steps {
                 sh '''
-                terraform destroy
+                terraform init
                 '''
             }
         }
