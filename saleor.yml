@@ -23,8 +23,7 @@ spec:
         - name: saleor
           image: praveenrajnikanth/workshop:saleor
           ports:
-            - name: saleor port
-              containerPort: 8000
+            - containerPort: 8000
               protocol: TCP
           command:
             - python
