@@ -10,7 +10,7 @@
    ports:
     - name: dbport
       port: 8000
-      targetPort: 8080
+      targetPort: 5432
 
 
 ---
@@ -40,3 +40,8 @@ spec:
           ports:
             - containerPort: 5432
               protocol: TCP
+          env: 
+            - name: POSTGRES_USER
+              value: "saleor"
+            - name: POSTGRES_PASSWORD
+              value: "saleor"
