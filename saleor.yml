@@ -25,7 +25,6 @@ spec:
           ports:
             - name: saleor port
               containerPort: 8000
-              hostport: 8080
               protocol: TCP
           command:
             - python
