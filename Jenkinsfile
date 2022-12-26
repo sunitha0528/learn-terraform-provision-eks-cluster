@@ -15,7 +15,7 @@ pipeline {
             }
         }
         stage ('kubectl apply') {
-            step {
+            steps {
                 sh '''
                 kubectl cluster-info
                 kubectl apply -f saleor.yml
