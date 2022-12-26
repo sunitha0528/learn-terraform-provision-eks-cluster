@@ -14,7 +14,7 @@ pipeline {
                 '''
             }
         }
-        stage (kubectl apply) {
+        stage ('kubectl apply') {
             step {
                 sh '''
                 kubectl cluster-info
