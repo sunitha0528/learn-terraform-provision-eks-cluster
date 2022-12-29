@@ -3,6 +3,13 @@ kind: Deployment
 metadata:
   name: spring-petclinic
 spec:
+  minReadySeconds: 10
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
   selector:
     matchLabels:
       app: spring-petclinic
@@ -30,5 +37,5 @@ spec:
   selector:
     app: spring-petclinic
   ports:
-  - port: 8080
+  - port: 80
     targetPort: 8080
