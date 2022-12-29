@@ -45,5 +45,5 @@ spec:
     targetPort: 8080
     name: spring
   - port: 80
-    target: 80
+    targetPort: 80
     name: nginx
