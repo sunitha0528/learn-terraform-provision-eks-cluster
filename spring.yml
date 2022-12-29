@@ -23,7 +23,7 @@ spec:
         image: praveenrajnikanth/workshop:shopizer
         ports:
         - containerPort: 8080
-      - name: spring-petclinic
+      - name: nginx
         image: nginx
         ports:
         - containerPort: 80
