@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh '''
                 terraform init
-                terraform apply --auto-approve
+                terraform destroy --auto-approve
                 aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)
                 '''
             }
