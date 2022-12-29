@@ -16,6 +16,8 @@ spec:
         image: praveenrajnikanth/workshop:shopizer
         ports:
         - containerPort: 8080
+      imagePullSecrets: 
+        - name: regcred
 
 
 ---
